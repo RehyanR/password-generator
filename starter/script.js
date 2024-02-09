@@ -87,7 +87,7 @@ var upperCasedCharacters = [
   "Y",
   "Z",
 ];
-// Function to generate a random password
+// Function to prompt user for password options
 function generatePassword() {
   // Define character sets for different types of characters
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -104,4 +104,28 @@ function generatePassword() {
           return;
       }}
 
-      console.log 
+
+
+// Function for getting a random element from an array
+function getRandom(arr) {
+
+}
+
+// Function to generate password with user input
+function generatePassword() {
+
+}
+
+// Get references to the #generate element
+var generateBtn = document.querySelector('#generate');
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+
+  passwordText.value = password;
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener('click', writePassword);
