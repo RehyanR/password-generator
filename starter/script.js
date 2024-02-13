@@ -94,38 +94,41 @@ function generatePassword() {
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numericChars = "0123456789";
   const specialChars = "!@#$%^&*()-_=+";
-  
-      // Prompt user for password length
-      let passwordLength = parseInt(prompt("Enter the length of the password (between 8 and 128 characters):"));
 
-      // Validate password length
-      if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-          alert("Please enter a valid password length between 8 and 128 characters.");
-          return;
-      }}
+  // Prompt user for password length
+  let passwordLength = parseInt(
+    prompt("Enter the length of the password (between 8 and 128 characters):")
+  );
 
+  // Validate password length
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter a valid password length between 8 and 128 characters.");
+    return;
+  }
+}
 
+// Prompt user for character types to include
+var includeLowercase = confirm("Include lowercase letters?");
+var includeUppercase = confirm("Include uppercase letters?");
+var includeNumbers = confirm("Include numbers?");
+var includeSpecialChars = confirm("Include special characters?");
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
-}
+function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {
-
-}
+function generatePassword() {}
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener("click", writePassword);
