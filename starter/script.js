@@ -114,7 +114,12 @@ var includeNumbers = confirm("Include numbers?");
 var includeSpecialChars = confirm("Include special characters?");
 
 // Validate that at least one character type is selected
-if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars) {
+if (
+  !includeLowercase &&
+  !includeUppercase &&
+  !includeNumbers &&
+  !includeSpecialChars
+) {
   alert("Please select at least one character type.");
   return;
 }
@@ -123,7 +128,20 @@ if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecial
 function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  if (options.includeLowercase) {
+    possibleChars = possibleChars.concat("abcdefghijklmnopqrstuvwxyz".split(""));
+  }
+  if (options.includeUppercase) {
+    possibleChars = possibleChars.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
+  }
+  if (options.includeSpecialChars) {
+    possibleChars = possibleChars.concat("!@#$%^&*()-_=+".split(""));
+  }
+  if (options.includeNumbers) {
+    possibleChars = possibleChars.concat("0123456789".split(""));
+  }
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
