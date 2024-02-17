@@ -125,15 +125,24 @@ if (
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandom(arr) {
+  function getRandom(arr) {
+    var randomIndex = Mathfloor(Math.random() * arr.length);
+    return arr[randomIndex];
+  }
+}
 
 // Function to generate password with user input
 function generatePassword() {
   if (options.includeLowercase) {
-    possibleChars = possibleChars.concat("abcdefghijklmnopqrstuvwxyz".split(""));
+    possibleChars = possibleChars.concat(
+      "abcdefghijklmnopqrstuvwxyz".split("")
+    );
   }
   if (options.includeUppercase) {
-    possibleChars = possibleChars.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
+    possibleChars = possibleChars.concat(
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
+    );
   }
   if (options.includeSpecialChars) {
     possibleChars = possibleChars.concat("!@#$%^&*()-_=+".split(""));
