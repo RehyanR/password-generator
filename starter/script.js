@@ -113,6 +113,12 @@ var includeUppercase = confirm("Include uppercase letters?");
 var includeNumbers = confirm("Include numbers?");
 var includeSpecialChars = confirm("Include special characters?");
 
+// Validate that at least one character type is selected
+if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialChars) {
+  alert("Please select at least one character type.");
+  return;
+}
+
 // Function for getting a random element from an array
 function getRandom(arr) {}
 
