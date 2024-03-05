@@ -60,29 +60,32 @@ var lowerCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var length = parseInt(prompt("Enter the length of the password (8 to 128 characters):"));
+  var length = parseInt(
+    prompt("Enter the length of the password (8 to 128 characters):")
+  );
 }
+
+var lowercase = confirm("Include lowercase characters?");
+var uppercase = confirm("Include uppercase characters?");
+var numeric = confirm("Include numeric characters?");
+var special = confirm("Include special characters?");
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
-}
+function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {
-
-}
+function generatePassword() {}
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener("click", writePassword);
