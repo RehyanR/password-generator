@@ -60,7 +60,7 @@ var lowerCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-
+  var length = parseInt(prompt("Enter the length of the password (8 to 128 characters):"));
 }
 
 // Function for getting a random element from an array
