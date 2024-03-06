@@ -73,6 +73,14 @@ var uppercase = confirm("Include uppercase characters?");
 var numeric = confirm("Include numeric characters?");
 var special = confirm("Include special characters?");
 
+return {
+  length: length,
+  lowercase: lowercase,
+  uppercase: uppercase,
+  numeric: numeric,
+  special: special
+};
+
 // Function for getting a random element from an array
 function getRandom(arr) {}
 
