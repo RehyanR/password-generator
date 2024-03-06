@@ -94,6 +94,11 @@ function generatePassword() {
   var options = getPasswordOptions();
 
   if (!options) return ""; // Return an empty string if no options are provided
+
+  var charset = "";
+  if (options.lowercase) charset += lowerCasedCharacters.join('');
+  if (options.uppercase) charset += lowerCasedCharacters.join('').toUpperCase();
+
 }
 
 // Get references to the #generate element
