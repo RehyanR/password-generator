@@ -88,11 +88,6 @@ function getPasswordOptions() {
   };
 }
 
-if (!(lowercase || uppercase || numeric || special)) {
-  alert("Please select at least one character type.");
-  return null;
-}
-
 // Function for getting a random element from an array
 function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
