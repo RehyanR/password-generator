@@ -63,8 +63,11 @@ function getPasswordOptions() {
   var length = parseInt(
     prompt("Enter the length of the password (8 to 128 characters):")
   );
+  if (isNaN(length) || length < 8 || length > 128) {
+    alert("Please enter a valid length between 8 and 128 characters.");
+    return null;
+  }
 }
-
 var lowercase = confirm("Include lowercase characters?");
 var uppercase = confirm("Include uppercase characters?");
 var numeric = confirm("Include numeric characters?");
