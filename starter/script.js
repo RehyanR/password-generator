@@ -63,23 +63,30 @@ function getPasswordOptions() {
   var length = parseInt(
     prompt("Enter the length of the password (8 to 128 characters):")
   );
+
   if (isNaN(length) || length < 8 || length > 128) {
     alert("Please enter a valid length between 8 and 128 characters.");
     return null;
   }
-}
-var lowercase = confirm("Include lowercase characters?");
-var uppercase = confirm("Include uppercase characters?");
-var numeric = confirm("Include numeric characters?");
-var special = confirm("Include special characters?");
 
-return {
-  length: length,
-  lowercase: lowercase,
-  uppercase: uppercase,
-  numeric: numeric,
-  special: special,
-};
+  var lowercase = confirm("Include lowercase characters?");
+  var uppercase = confirm("Include uppercase characters?");
+  var numeric = confirm("Include numeric characters?");
+  var special = confirm("Include special characters?");
+
+  if (!(lowercase || uppercase || numeric || special)) {
+    alert("Please select at least one character type.");
+    return null;
+  }
+
+  return {
+    length: length,
+    lowercase: lowercase,
+    uppercase: uppercase,
+    numeric: numeric,
+    special: special,
+  };
+}
 
 if (!(lowercase || uppercase || numeric || special)) {
   alert("Please select at least one character type.");
@@ -88,9 +95,7 @@ if (!(lowercase || uppercase || numeric || special)) {
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  function getRandom(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 // Function to generate password with user input
@@ -109,8 +114,9 @@ function generatePassword() {
   for (var i = 0; i < options.length; i++) {
     var randomIndex = Math.floor(Math.random() * charset.length);
     password += charset[randomIndex];
-}
-return password;
+  }
+
+  return password;
 }
 
 // Get references to the #generate element
