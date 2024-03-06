@@ -78,7 +78,7 @@ return {
   lowercase: lowercase,
   uppercase: uppercase,
   numeric: numeric,
-  special: special
+  special: special,
 };
 
 if (!(lowercase || uppercase || numeric || special)) {
@@ -90,7 +90,11 @@ if (!(lowercase || uppercase || numeric || special)) {
 function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  var options = getPasswordOptions();
+
+  if (!options) return ""; // Return an empty string if no options are provided
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
