@@ -104,8 +104,14 @@ function generatePassword() {
   if (options.uppercase) charset += lowerCasedCharacters.join("").toUpperCase();
   if (options.numeric) charset += numericCharacters.join("");
   if (options.special) charset += specialCharacters.join("");
+
+  var password = "";
+  for (var i = 0; i < options.length; i++) {
+    var randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
 }
 return password;
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
