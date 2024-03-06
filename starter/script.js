@@ -96,10 +96,12 @@ function generatePassword() {
   if (!options) return ""; // Return an empty string if no options are provided
 
   var charset = "";
-  if (options.lowercase) charset += lowerCasedCharacters.join('');
-  if (options.uppercase) charset += lowerCasedCharacters.join('').toUpperCase();
-
+  if (options.lowercase) charset += lowerCasedCharacters.join("");
+  if (options.uppercase) charset += lowerCasedCharacters.join("").toUpperCase();
+  if (options.numeric) charset += numericCharacters.join("");
+  if (options.special) charset += specialCharacters.join("");
 }
+return password;
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
